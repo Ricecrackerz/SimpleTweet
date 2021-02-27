@@ -30,13 +30,13 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/Ricecrackerz/SimpleTweet/blob/master/SimpleTweetNEW.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+There were an abundant amount of issues regarding this project. First, it required you to download certain SDKs and without that knowledge one could take a lot of time figuring it out. Another issue was properly opening the SimpleTweet app, as well as refactoring classes. I had to reopen a new SimpleTweet file and close Android Studio. By doing this, Android Studio was able to recognize the class files. I also had a lot of issues with tweets being shown on my emulator. I would have to refresh a lot of times to have it show up and sometimes it would crash when refreshing. My AVDs were also missing, and I had to switch to API 27 to properly load the tweets. My emulator would bug out, presenting a fully black screen, bits of text everywhere, and applications spread out all over the emulator. Coding this project was fairly easy, but dealing with all the external issues and bugs took almost three to four hours in total. I wish I had more of that time to focus on the stretch stories as they were very interesting and compelling to me. Especially since I am an aspiring mobile app developer.
 
 ## Open-source libraries used
 
