@@ -3,11 +3,15 @@ package com.codepath.apps.restclienttemplate;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
@@ -21,10 +25,12 @@ import okhttp3.Headers;
 public class ComposeActivity extends AppCompatActivity {
 
     public static final String TAG = "ComposeActivity";
-    public static final int MAX_TWEET_LENGHTH = 140;
+    public static final int MAX_TWEET_LENGHTH = 280;
 
     EditText etCompose;
     Button btnTweet;
+
+    TextView tvCount;
 
     TwitterClient client;
 
@@ -37,6 +43,31 @@ public class ComposeActivity extends AppCompatActivity {
 
         etCompose = findViewById(R.id.etCompose);
         btnTweet = findViewById(R.id.btnTweet);
+
+        tvCount = findViewById(R.id.tvCount);
+
+        etCompose.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                tvCount.setTextColor(Color.GRAY);
+                int character = etCompose.length();
+                String convert = String.valueOf(character);
+                tvCount.setText(convert + "/280");
+                if(etCompose.length() > MAX_TWEET_LENGHTH) {
+                    tvCount.setTextColor(Color.RED);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         btnTweet.setOnClickListener(new View.OnClickListener() {
             @Override
