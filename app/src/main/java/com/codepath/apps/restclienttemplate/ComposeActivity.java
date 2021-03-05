@@ -54,12 +54,13 @@ public class ComposeActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                btnTweet.setEnabled(true);
                 tvCount.setTextColor(Color.GRAY);
-                int character = etCompose.length();
-                String convert = String.valueOf(character);
-                tvCount.setText(convert + "/280");
+                String character = String.valueOf(etCompose.length());
+                tvCount.setText(character + "/280");
                 if(etCompose.length() > MAX_TWEET_LENGHTH) {
                     tvCount.setTextColor(Color.RED);
+                    btnTweet.setEnabled(false);
                 }
             }
 
